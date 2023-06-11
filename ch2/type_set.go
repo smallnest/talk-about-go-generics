@@ -16,6 +16,11 @@ type Error struct {
 // 	~error
 // }
 
+type I000 interface {
+	~[]byte
+	~struct{ f int }
+}
+
 type Error2 = struct {
 	Code  int
 	Error string
@@ -139,6 +144,17 @@ type Value[T any, V any] struct {
 	Hodler *Tree[T]
 	Value  V
 }
+
+// type Tree1 struct {
+// 	Left  *Tree1
+// 	V     Value2
+// 	Right *Tree1
+// }
+
+// type Value2 struct {
+// 	Hodler *Tree1
+// 	Value  int
+// }
 
 type ListHead[T any] struct {
 	head *ListElement[T]

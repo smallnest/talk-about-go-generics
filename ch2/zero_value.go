@@ -4,6 +4,10 @@ package ch2
 // 	return v == nil
 // }
 
+func ZeroValue1(v any) bool {
+	return v == nil
+}
+
 func interfaceIsNil(v any) bool {
 	return v == nil
 }

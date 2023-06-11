@@ -1,6 +1,10 @@
 package ch2
 
-import "fmt"
+import (
+	"fmt"
+
+	"golang.org/x/exp/constraints"
+)
 
 // func tswitch[T any](v T) {
 // 	switch v := v.(type) {
@@ -36,5 +40,10 @@ func tswitch2[T any](v T) {
 
 func tassert3[T any](v T) {
 	i := (any)(v).(int)
+	fmt.Println(i)
+}
+
+func tassert4[T constraints.Integer](v T) {
+	i := int(v)
 	fmt.Println(i)
 }
